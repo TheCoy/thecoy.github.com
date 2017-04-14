@@ -11,7 +11,7 @@ javascript:
 					return a.indexOf('360ee')>-1||a.indexOf('360se')>-1||a.indexOf('se')>-1||
 						a.indexOf('aoyou')>-1||a.indexOf('theworld')>-1||a.indexOf('worldchrome')>-1||
 						a.indexOf('greenbrowser')>-1||a.indexOf('qqbrowser')>-1||a.indexOf('baidu')>-1
-					}
+				}
 				var a=document.createElement('div'),
 				b=navigator.userAgent.toLowerCase(),
 				c=b.match(/chrome\/([\d.]+)/)[1];
@@ -21,8 +21,8 @@ javascript:
 				a.onclick=function(){a.style.display='none'},
 				setTimeout(function(){a.click()},8e3)},
 				document.getElementsByTagName('head')[0].appendChild(a)
-			}catch(b){
-				alert(b)
-			}
+		}catch(b){
+			alert(b)
 		}
+	}
 )();
