@@ -74,6 +74,9 @@ deploy:
   repo: git@github.com:TheCoy/thecoy.github.com.git
   branch: master
 
+plugin:
+- hexo-generator-feed
+
 # jsonContent
 jsonContent:
   meta: false
