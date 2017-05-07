@@ -33,8 +33,11 @@ def list_img_file(directory):
         name, fileformat = filename.split(".")
         if fileformat.lower() == "jpg" or fileformat.lower() == "png" or fileformat.lower() == "gif":
             new_list.append(filename)
+	    # print filename
     # print new_list
+    new_list.sort(key= lambda x:(x[2],x[3],x[5],x[6],x[8],x[9]))
     return new_list
+
 
 
 def print_help():
