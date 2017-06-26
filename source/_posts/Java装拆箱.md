@@ -9,7 +9,7 @@ tags: Java
 ### Java的包装类
 > Java语言是一个面向对象的语言，但是Java中的基本数据类型却是不面向对象的，这在实际使用时存在很多的不便，为了解决这个不足，在设计类时为每个基本数据类型设计了一个对应的类进行代表，这样八个和基本数据类型对应的类统称为包装类(Wrapper Class)，有些地方也翻译为外覆类或数据类型类，如下表所示：
 
-
+<!-- more -->
 基本数据类型| 对应的包装类
 ---|---
 byte | Byte
@@ -20,7 +20,7 @@ char | Character
 float | Float
 double | Double
 boolean | Boolean
-<!-- more -->
+
 #### Java 包装器类的主要目的
 - 提供一种机制，将基本值“包装”到对象中，从而使基本值能够包含在为对象而保留的操作中，比如添加到Collections 中，或者从带对象返回值的方法中返回。
 - 为基本值提供分类功能。这些功能大多数于各种转换有关：在基本值和String对象间相互转换，在基本值和String对象之间按不同基数转换，如二进制、八进制和十六进制。
@@ -29,16 +29,15 @@ boolean | Boolean
 
 ### 装箱与拆箱
 在Java SE5之前，如果要生成一个数值为100的Integer对象，必须这样进行：
-
-```
+```java
 Integer i = new Integer(100);
 ```
 而从Java SE5开始提供了自动装箱的特性，上述代码可写成如下形式：
-```
+```java
 int i = 100;
 ```
 那么在这个过程中会自动根据数值创建对应的Integer对象，这就是***装箱***，自动调用Integer的valueOf()方法。
-```
+```java
 Integer test = null;
 int f = test.initValue();
 ```
@@ -56,7 +55,7 @@ int f = test.initValue();
 > 7. 【强制】所有的相同类型的包装类对象之间值的比较，全部使用 equals 方法比较。 
 
 究竟是什么原因让阿里的程序猿们如此深恶痛觉，其实只需一看源码便知晓答案了，下面这段代码是Integer的valueOf方法的具体实现：
-```
+```java
 public static Integer valueOf(int i){
     if(i >= -128 && i <= IntegerCache.high)
         return IntergerCache.cache[i + 128];
@@ -77,7 +76,7 @@ public static Integer valueOf(int i){
 基本类型|值|不可用
 包装类|对象内存地址|内容
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         Integer i1 = 100;
@@ -89,13 +88,15 @@ public class Main {
         System.out.println(i3==i4);
     }
 }
-输出结果：
-true
-false
+/**
+* 输出结果：
+* true
+* false
+*/
 ```
 参照以上Integer的valueOf()方法的源码不难理解上述的输出。
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         Double i1 = 100.0;
@@ -107,13 +108,15 @@ public class Main {
         System.out.println(i3==i4);
     }
 }
-输出结果：
-false
-false
+/**
+* 输出结果：
+* false
+* false
+*/
 ```
 在这里只解释一下为什么Double类的valueOf方法会采用与Integer类的valueOf方法不同的实现。很简单：在某个范围内的整型数值的个数是有限的，而浮点数却不是。
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         Boolean i1 = false;
@@ -125,18 +128,20 @@ public class Main {
         System.out.println(i3==i4);
     }
 }
-输出结果：
-true
-true
+/**
+* 输出结果：
+* true
+* true
+*/
 ```
 以上结果参照Boolean类的源码也会一目了然：
-```
+```java
 public static Boolean valueOf(boolean b) {
         return (b ? TRUE : FALSE);
     }
 ```
 > 以及TRUE 和 FALSE的定义
-```
+```java
 /**
  * The {@code Boolean} object corresponding to the primitive
  * value {@code true}.

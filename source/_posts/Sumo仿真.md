@@ -11,6 +11,7 @@ tags: SUMO
 - 通过xml文件自定义配置网络，然后用Netconvert 导入
 - 使用Netconvert导入已存在的网络（OSM地图）
 
+<!-- more -->
 2.需求建模
 - 描述明确的车辆路径
 - 仅使用车流和转弯概率
@@ -21,10 +22,6 @@ tags: SUMO
 3.计算动态用户分配
 4.校正仿真
 5.执行仿真
-
-
-<!-- more -->
-
 
 ### 1. SUMO道路网络的构建
 **网络格式**
@@ -46,7 +43,7 @@ tags: SUMO
 * 节点的描述
 节点文件一般以".nod.xml"作为扩展名，每行描述一个节点，如下所示：
 
-```
+```xml
 <node id="<STRING>" x="<FLOAT>" y="<FLOAT>" [type="<TYPE>"]/> 
 ```
 
@@ -59,13 +56,13 @@ traffic_light | 交叉口被交通灯控制
 right_before_left | 来自右边的车辆优先通过
 
 一个节点描述示例：
-```
+```xml
 <node id="1" x="-500.0" y="0.0" type="priority"/>
 ```
 
 * 边的描述
 边和节点的描述差不多，但还有其他参数。边的描述格式如下所示：
-```
+```xml
 <edge id="<STRING>" (fromnode="<NODE_ID>" tonode="<NODE_ID>" | xfrom="<FLOAT>" yfrom="<FLOAT>" xto="<FLOAT>" yto="<FLOAT>")  [type="<STRING>" | nolanes="<INT>" speed="<FLOAT>" priority="<UINT>" length="<FLOAT>")][shape="<2D_POINT> [ <2D_POINT>]*"] [spread_type="center"]/> 
 ```
 每个边都是单向的：从起始节点开始，在终 止节点结束。如果所给出的节点名字不能提取(因为在节点文件中没有定义)，将会产生错误。
@@ -85,19 +82,19 @@ nolanes | int | 边的车道数，必须是整数
 speed | float |边允许的最大车速(m/s)，必须是浮点数
 priority | int | 边的优先权
 length | float | 边长(m)
-shape | 位置列表，用(x1,y1,x2,y2)表示，单位m | 例如：<edge id="e1" fromnode="0" tonode="1" shape="0,0 0,100"/> 描述一个边， 从节点0开始，首先经过点(0,0)，然后向右行 100米，最后到达节点1
+shape | 位置列表，用(x1,y1,x2,y2)表示，单位m | 例如：`<edge id="e1" fromnode="0" tonode="1" shape="0,0 0,100"/>` 描述一个边， 从节点0开始，首先经过点(0,0)，然后向右行 100米，最后到达节点1
 spread_type | 枚举类型（right,center）| 描述怎样延展车道，center表示双向延展车道， 其他值为右向延展 
 
 一条边的描述示例：
-```
+```xml
 <edge id="2o" fromnode="0" tonode="2" priority="1" nolanes="1" speed="11.11"/> 
 ```
 * 使用Netconvert构建网络调用格式如下：
 ```
-netconvert --xml-node-files=MyNodes.nod.xml --xml-edge-files=MyEdges.edg.xml --output-file=MySUMONet.net.xm
+netconvert --xml-node-files=MyNodes.nod.xml --xml-edge-files=MyEdges.edg.xml --output-file=MySUMONet.net.xml
 ```
 如果还使用了类型和连接文件，则调用格式如下：
-```
+```dos
 netconvert --xml-node-files=MyNodes.nod.xml --xml-edge-files=MyEdges.edg.xml --xml-connection-files=MyConnections.con.xml --xml-type-files=MyTypes.typ.xml --output-file=MySUMONet.net.xml 
 ```
 可能你的边的定义不完整或有错，如果你仍希望导入这个网络，可以试着使用 NETCONVERT的--dismiss-loading-errors参数忽略这些。这样，定义不正确的边将被省略， 但是NETCONVERT仍试图构建网络。
@@ -107,11 +104,11 @@ netconvert --xml-node-files=MyNodes.nod.xml --xml-edge-files=MyEdges.edg.xml --x
 从OpenStreetMap的[官方网站](http://www.openstreetmap.org/)可以知道， OpenStreetMap是一个可自由编辑的世界地图，它由来自全世界的人士共同编辑维护。 OpenStreetMap工程的地图数据文件是一个或多个XML文件。 注意：OSM数据可以有多种不同的方式下载获得。
 
 NETCONVERT可以导入本地的OSM数据文件，这需要使用选项—osm-files \<file> 下面的命令导入OSM格式路网文件berlin.osm.xml，并把产生的SUMO路网文件保存为 berlin.net.xml：
-```
+```dos
 netconvert --osm-files berlin.osm.xml -o berlin.net.xml 
 ```
 注意：导入OSM路网后，一个路口节点可能被分为很多歌节点，这样既不美观，也影响 仿真效果，我们可以合并距离较近的节点，或者指定合并哪些节点，具体如下： 
- ```
+ ```dos
 netconvert --osm-files map.osm --junctions.join-dist 50 -o guiyang.net.xml 
  ```
  ---
@@ -129,11 +126,11 @@ Sumo中用于处理路径信息的工具：
 
 **可行的生成随机路径的方法**
 1.使用sumo\tools\trip目录下的randomTrips.py脚本生成*.trip.xml随机旅程文件(net 文件作为输入)
-```
+```dos
 randomTrips.py  –n  beijing.net.xml 
 ```
 2.使用Duarouter工具(使用net文件和trip文件作为输入)生成路径文件 
-```
+```dos
 Duarouter  –n test.net.xml  –t test.trip.xml  –o test.rou.xml --continue-on-unbuild(忽略错误继续) –w(不显示警告信息) 
 ```
 ---
@@ -141,19 +138,19 @@ Duarouter  –n test.net.xml  –t test.trip.xml  –o test.rou.xml --continue-o
 **3.1  使用随机路径仿真**
 1.在OpenStreetMap网站下载osm格式的城市地图
 2.使用netconvert把osm格式地图转换为SUMO格式的路网:
-```
+```dos
 netconvert --osm-files berlin.osm.xml -o berlin.net.xml
 ```
 3.使用sumo\tools\trip目录下的randomTrips.py脚本生成*.trip.xml随机旅程文件(net 文件作为输入)，以下命令生成berlin.trip.xml随机旅程文件:
-```
+```dos
 randomTrips.py  –n  berlin.net.xml 
 ```
 4.使用Duarouter工具(使用net文件和trip文件作为输入)生成路径文件(也可使用车 辆定义文件) 
-```
+```dos
 Duarouter  –n berlin.net.xml  –t berlin.trip.xml  –o berlin.rou.xml --continue-on-unbuild(忽略错误继续) –w(不显示警告信息) 
 ```
 5.手工编辑berlin.sumo.cfg配置文件 
-```
+```xml
 <?xml version="1.0" encoding="iso-8859-1"?>
     <configuration>
         <input>
