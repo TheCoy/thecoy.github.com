@@ -1,6 +1,6 @@
 ---
 title: JS异步设计
-date: 2017-08-29 11:55:16
+date: 2017-08-27 11:55:16
 tags: 异步
 ---
 
@@ -27,6 +27,7 @@ RunTasks({
     }
 });
 ```
+<!-- more -->
 要求设计一个RunTask函数，使得三个异步任务在给定时间内执行完后输出对应结果，如果超时则打印超时提示，如果失败则提示任务异常信息：
 ```javascript
 var asyncFunA = function (param1, param2, callback) {
