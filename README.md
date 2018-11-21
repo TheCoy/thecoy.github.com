@@ -17,7 +17,7 @@
         ```shell
         npm config set registry https://registry.npm.taobao.org
         ```
-3. Hexo [https://hexo.io/zh-cn/docs/]
+3. [Hexo](https://hexo.io/zh-cn/docs/)
     - npm install hexo-cli -g
     - npm install hexo-server
     - npm install hexo-deployer-git --save
