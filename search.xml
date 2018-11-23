@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>ES学习笔记</title>
+      <link href="/2018/11/21/ES%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <url>/2018/11/21/ES%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>Elasticsearch</strong> 是一个实时的分布式搜索分析引擎, 建立在一个全文搜索引擎库 Apache Lucene™ 基础之上。</p><ul><li>一个分布式的实时文档存储，每个字段可以被索引与搜索</li><li>一个分布式实时分析搜索引擎</li><li>能胜任上百个服务节点的扩展，并支持 PB 级别的结构化或者非结构化数据</li></ul><h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><ul><li>全文检索</li><li>结构化搜索</li><li>分析</li></ul><a id="more"></a><h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><ul><li>索引（名词）</li></ul><p>一个 索引 类似于传统关系数据库中的一个 数据库 ，是一个存储关系型文档的地方。 索引 (index) 的复数词为 indices 或 indexes</p><ul><li>索引（动词）</li></ul><p>索引一个文档 就是存储一个文档到一个 索引 （名词）中以便它可以被检索和查询到。这非常类似于 SQL 语句中的 INSERT 关键词，除了文档已存在时新文档会替换旧文档情况之外。</p><ul><li>倒排索引</li></ul><p>关系型数据库通过增加一个 索引 比如一个 B树（B-tree）索引 到指定的列上，以便提升数据检索速度。Elasticsearch 和 Lucene 使用了一个叫做 倒排索引 的结构来达到相同的目的。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">curl -X PUT "localhost:9200/megacorp/employee/1" -H 'Content-Type: application/json' -d'</span><br><span class="line">&#123;</span><br><span class="line">    "first_name" : "John",</span><br><span class="line">    "last_name" :  "Smith",</span><br><span class="line">    "age" :        25,</span><br><span class="line">    "about" :      "I love to go rock climbing",</span><br><span class="line">    "interests": [ "sports", "music" ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>‘</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>排序算法总结</title>
       <link href="/2017/08/28/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"/>
       <url>/2017/08/28/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</url>
