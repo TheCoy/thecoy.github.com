@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://thecoy.github.io/"/>
-  <updated>2018-11-23T15:49:04.701Z</updated>
+  <updated>2019-02-26T14:35:33.462Z</updated>
   <id>http://thecoy.github.io/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>冲鸭2019</title>
+    <link href="http://thecoy.github.io/2019/02/26/%E5%86%B2%E9%B8%AD2019/"/>
+    <id>http://thecoy.github.io/2019/02/26/冲鸭2019/</id>
+    <published>2019-02-26T14:02:25.000Z</published>
+    <updated>2019-02-26T14:35:33.462Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="加油2019年"><a href="#加油2019年" class="headerlink" title="加油2019年"></a>加油2019年</h1><ul><li>不知不觉毕业已经大半年了，本来早就想写点什么的，或总结、或展望，无奈自己确实懒入骨髓已久，也可能停笔多时，想写什么一时也写不出来，但只要想起来去写就总归是好的</li><li>今天看到耗子叔更新了博客谈了一些自己的价值观和想法，谈到他24岁从银行毅然辞职走上程序员的道路，让我忽地想起来那句“实迷途其未远，觉今是而昨非”，嗯……，我想一起其实都还来得及，毕竟选择是自己的，明天仍然还是掌握在自己手中</li></ul><h2 id="过去的半年"><a href="#过去的半年" class="headerlink" title="过去的半年"></a>过去的半年</h2><ul><li>毕业工作刚过去的半年，个人的成长既不能妄自菲薄地说啥也没有，但也确实还有很多能做得更好的地方：技术的自我驱动、对待工作和生活的积极性，以及一堆疯狂吃灰的书</li></ul><h2 id="对自己的一点期许"><a href="#对自己的一点期许" class="headerlink" title="对自己的一点期许"></a>对自己的一点期许</h2><ul><li><p>多一些想法</p><blockquote><p>这一点确实有点想捶自己胸口的冲动，可能自己书读的太少的缘故吧，“吾尝终日而思矣，不如须臾之所学”还是有些道理的罢，所以立下一个小目标：今年要读完10本书，不限类型、不限媒介</p></blockquote></li><li><p>多造点玩具和折腾折腾</p><blockquote><p>尽管这听起来更像是一个学生的自我要求，但真的在工作中能让你随意自由发挥的空间还是有限的，要时刻不停地折腾东西，保持作为一个技术人应该有的自我驱动</p></blockquote></li><li><p>多写点啥</p><blockquote><p>写写日记什么的也是好的，哪怕写日记听着像是一件很幼稚的事情，但确实是比较有效地能让自己审视自我内心的方式。无论是写什么内容，观影感受、技术总结、经验积累，或是天马行空也好，“我思，故我在”，哈哈哈，我也是个哲学家了</p></blockquote></li></ul><h2 id="留白"><a href="#留白" class="headerlink" title="留白"></a>留白</h2><ul><li>未来很远，世界很美，我也想证实自己存活过</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;加油2019年&quot;&gt;&lt;a href=&quot;#加油2019年&quot; class=&quot;headerlink&quot; title=&quot;加油2019年&quot;&gt;&lt;/a&gt;加油2019年&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;不知不觉毕业已经大半年了，本来早就想写点什么的，或总结、或展望，无奈自己确实懒入骨髓已久
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>ES学习笔记</title>
     <link href="http://thecoy.github.io/2018/11/21/ES%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://thecoy.github.io/2018/11/21/ES学习笔记/</id>
     <published>2018-11-21T15:45:26.000Z</published>
-    <updated>2018-11-23T15:49:04.701Z</updated>
+    <updated>2018-11-23T15:50:25.007Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>Elasticsearch</strong> 是一个实时的分布式搜索分析引擎, 建立在一个全文搜索引擎库 Apache Lucene™ 基础之上。</p><ul><li>一个分布式的实时文档存储，每个字段可以被索引与搜索</li><li>一个分布式实时分析搜索引擎</li><li>能胜任上百个服务节点的扩展，并支持 PB 级别的结构化或者非结构化数据</li></ul><h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><ul><li>全文检索</li><li>结构化搜索</li><li>分析</li></ul><a id="more"></a><h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><ul><li>索引（名词）</li></ul><p>一个 索引 类似于传统关系数据库中的一个 数据库 ，是一个存储关系型文档的地方。 索引 (index) 的复数词为 indices 或 indexes</p><ul><li>索引（动词）</li></ul><p>索引一个文档 就是存储一个文档到一个 索引 （名词）中以便它可以被检索和查询到。这非常类似于 SQL 语句中的 INSERT 关键词，除了文档已存在时新文档会替换旧文档情况之外。</p><ul><li>倒排索引</li></ul><p>关系型数据库通过增加一个 索引 比如一个 B树（B-tree）索引 到指定的列上，以便提升数据检索速度。Elasticsearch 和 Lucene 使用了一个叫做 倒排索引 的结构来达到相同的目的。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">curl -X PUT "localhost:9200/megacorp/employee/1" -H 'Content-Type: application/json' -d'</span><br><span class="line">&#123;</span><br><span class="line">    "first_name" : "John",</span><br><span class="line">    "last_name" :  "Smith",</span><br><span class="line">    "age" :        25,</span><br><span class="line">    "about" :      "I love to go rock climbing",</span><br><span class="line">    "interests": [ "sports", "music" ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>‘</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>Elasticsearch</strong> 是一个实时的分布式搜索分析引擎, 建立在一个全文搜索引擎库 Apache Lucene™ 基础之上。</p><ul><li>一个分布式的实时文档存储，每个字段可以被索引与搜索</li><li>一个分布式实时分析搜索引擎</li><li>能胜任上百个服务节点的扩展，并支持 PB 级别的结构化或者非结构化数据</li></ul><h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><ul><li>全文检索</li><li>结构化搜索</li><li>分析</li></ul><a id="more"></a><h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><ul><li>索引（名词）</li></ul><p>一个 索引 类似于传统关系数据库中的一个 数据库 ，是一个存储关系型文档的地方。 索引 (index) 的复数词为 indices 或 indexes</p><ul><li>索引（动词）</li></ul><p>索引一个文档 就是存储一个文档到一个 索引 （名词）中以便它可以被检索和查询到。这非常类似于 SQL 语句中的 INSERT 关键词，除了文档已存在时新文档会替换旧文档情况之外。</p><ul><li>倒排索引</li></ul><p>关系型数据库通过增加一个 索引 比如一个 B树（B-tree）索引 到指定的列上，以便提升数据检索速度。Elasticsearch 和 Lucene 使用了一个叫做 倒排索引 的结构来达到相同的目的。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">curl -X PUT "localhost:9200/megacorp/employee/1" -H 'Content-Type: application/json' -d'</span><br><span class="line">&#123;</span><br><span class="line">    "first_name" : "John",</span><br><span class="line">    "last_name" :  "Smith",</span><br><span class="line">    "age" :        25,</span><br><span class="line">    "about" :      "I love to go rock climbing",</span><br><span class="line">    "interests": [ "sports", "music" ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
