@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="TheCoy&#39;s Blog">
 <meta property="og:description" content="一个报警的连锁反应背景 2019年06月20日，又是一个风(bai)和(wu)日(liao)丽(lai)的日子，早上刚到公司，刷会手机喝喝水准备开站会的前夕，突然收到一封报警邮件。尽管早已习惯报警邮件的晚高峰轰炸，但头一次在美好的早晨被报警邮件所叨扰，还是不免心头一紧。  似曾相识然后开完站会，就发现这个报警和上次的似乎差不多。具体报警内容是这样的： 1PHP Fatal error:  Allo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-21T06:33:09.304Z">
+<meta property="og:updated_time" content="2020-08-13T01:59:45.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个bug的来龙去脉">
 <meta name="twitter:description" content="一个报警的连锁反应背景 2019年06月20日，又是一个风(bai)和(wu)日(liao)丽(lai)的日子，早上刚到公司，刷会手机喝喝水准备开站会的前夕，突然收到一封报警邮件。尽管早已习惯报警邮件的晚高峰轰炸，但头一次在美好的早晨被报警邮件所叨扰，还是不免心头一紧。  似曾相识然后开完站会，就发现这个报警和上次的似乎差不多。具体报警内容是这样的： 1PHP Fatal error:  Allo">
@@ -194,6 +194,7 @@
 </blockquote>
 <h2 id="似曾相识"><a href="#似曾相识" class="headerlink" title="似曾相识"></a>似曾相识</h2><p>然后开完站会，就发现这个报警和上次的似乎差不多。具体报警内容是这样的：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 20480 bytes)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>之前也出现过一次相同的内存爆掉的问题，而且是同样的文件，同样的位置。当时定位到的问题根源是这样的：</p>
 <ol>
 <li>QA自动化在对线上的接口作测试，其中就包括了这一个接口，但是它的测试用例集中在了某一个具体的caseID，导致这个caseID下的数据量产生异常</li>
@@ -494,15 +495,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SUMO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
